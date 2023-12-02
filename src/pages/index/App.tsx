@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
-import useStore from './../../zustand/store';
+// import useStore from './../../zustand/store';
+import useStore from './../../zustand/persistStore';
 
 function App() {
   const { count, increment, decrement ,reset ,totalCount} = useStore();

@@ -1,5 +1,6 @@
 import { type } from 'os';
 import create from 'zustand';
+import { persist, createJSONStorage } from 'zustand/middleware'
 
 type Store = {
     count: number; //count type
@@ -22,7 +23,7 @@ type Store = {
     totalCount:0,
     increment: () => set((state) => ({ count: state.count + 1 ,totalCount:state.totalCount + 1 })), //first func (increment)
     decrement: () => set((state) => ({ count: state.count - 1 ,totalCount:state.totalCount + 1})), //second func (decrement)
-    reset: () => set(initialState), //second func (decrement)
+    reset: () => set(initialState), //reset func (reset)
   }));
   
   export default useStore;
