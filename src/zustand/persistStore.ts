@@ -18,7 +18,7 @@ const initialState = {
   }
 
 const useBearStore = create<Store & Action>()(
-  persist(
+  persist( // persist func zustand middleware 
     (set, get:any) => ({
       count: 0,
       totalCount:0,
@@ -27,8 +27,8 @@ const useBearStore = create<Store & Action>()(
       reset: () => set(initialState),
     }),
     {
-      name: 'count-storage', 
-      storage: createJSONStorage(() => sessionStorage), 
+      name: 'count-storage',  // name persist store
+      storage: createJSONStorage(() => sessionStorage), // type storage
     },
   ),
 )
