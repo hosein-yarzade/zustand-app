@@ -5,8 +5,8 @@ import useStore from './../../zustand/persistStore';
 
 function App() {
   const { count, increment, decrement ,reset ,totalCount} = useStore();
-  const clearStoeage = async ()=>{
-    await useStore.persist.rehydrate()
+  const clearStoeage = ()=>{
+    useStore.persist.clearStorage()
   }
   return (
     <Fragment>
